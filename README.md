@@ -1,2 +1,3 @@
 # nvim_cfg
-My editor configuration
+
+My editor configuration.
