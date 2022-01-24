@@ -1,10 +1,10 @@
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
 
-	use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/plenary.nvim'
 
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
@@ -14,17 +14,17 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'onsails/lspkind-nvim'
 
-	use {
-		'lewis6991/gitsigns.nvim',
-		requires = {
-			'nvim-lua/plenary.nvim'
-		},
-	}
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  }
 
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   use 'nvim-telescope/telescope-fzy-native.nvim'
 
@@ -32,20 +32,20 @@ return require('packer').startup(function()
 
   use 'ThePrimeagen/harpoon'
 
-	use 'tpope/vim-vinegar'
+  use 'tpope/vim-vinegar'
 
-	use 'tpope/vim-fugitive'
+  use 'tpope/vim-fugitive'
 
-	use 'tpope/vim-surround'
+  use 'tpope/vim-surround'
 
-	use 'tpope/vim-eunuch'
+  use 'tpope/vim-eunuch'
 
-	use 'tjdevries/colorbuddy.vim'
-	use 'tjdevries/gruvbuddy.nvim'
+  use 'tjdevries/colorbuddy.vim'
+  use 'tjdevries/gruvbuddy.nvim'
 
   use 'itchyny/calendar.vim'
   use 'freitass/todo.txt-vim'
-	use 'rhysd/vim-grammarous'
+  use 'rhysd/vim-grammarous'
   use 'KabbAmine/lazyList.vim'
 
 end)
