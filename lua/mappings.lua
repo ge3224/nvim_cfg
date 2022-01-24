@@ -9,6 +9,9 @@ vim.g.mapleader = ' ' -- 'vim.g' sets global variables
 -- Edit init.lua
 map('n', '<leader>ev', ':vsplit $MYVIMRC<CR>', options)
 
+-- Terminal escape
+map('t', '<esc>', ':<C-\\><C-n>', options)
+
 -- Source init.lua
 map('n', '<leader>sv', ':luafile $MYVIMRC<CR>', options)
 
