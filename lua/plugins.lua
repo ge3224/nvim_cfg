@@ -48,4 +48,6 @@ return require('packer').startup(function()
   use 'rhysd/vim-grammarous'
   use 'KabbAmine/lazyList.vim'
 
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
 end)
