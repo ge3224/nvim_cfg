@@ -39,3 +39,6 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
+
+vim.g['airline#extensions#tabline#formatter'] = 'default'
+vim.g.airline_section_z = '%p%%%{g:airline_symbols.linenr}%#__accent_bold#%l/%L'
