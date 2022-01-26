@@ -16,7 +16,6 @@ o.showmode = false
 o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
-o.undodir = "undodir"
 o.undofile = true
 o.updatetime = 50
 
