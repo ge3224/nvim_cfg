@@ -35,4 +35,4 @@ map('n', '<leader>rd', [[mz:g/^\(.*\)\n\1$/d<CR>'z]], options)
 map('n', '<leader>ws', [[vip:s/\s\{2,}/ /g<CR>]], options)
 
 -- Yank the full file path of the current buffer
-map('n', '<leader>fp', [[:let @" = expand("%:p")<CR>]], options)
+map('n', '<leader>fp', [[:let @+ = expand("%:p")<CR>]], options)
