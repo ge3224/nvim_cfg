@@ -28,6 +28,13 @@ map('n', '<leader>o', [[:lua require("harpoon.ui").nav_file(3)<CR>]], options)
 map('n', '<leader>p', [[:lua require("harpoon.ui").nav_file(4)<CR>]], options)
 map('n', '<leader>y', [[:lua require("harpoon.ui").toggle_quick_menu()<CR>]], options)
 
+
+-- Moving through split windows
+map('n', 'gj', [[<C-w>j]], options)
+map('n', 'gh', [[<C-w>h]], options)
+map('n', 'gk', [[<C-w>k]], options)
+map('n', 'gl', [[<C-w>l]], options)
+
 -- Remove duplicates
 map('n', '<leader>rd', [[mz:g/^\(.*\)\n\1$/d<CR>'z]], options)
 

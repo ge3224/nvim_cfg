@@ -33,6 +33,7 @@ bo.fileformat = "unix"
 bo.spellfile = "spell/en.utf-8.add"
 bo.spelllang = "en,cjk"
 bo.swapfile = false
+-- bo.formatoptions="cro"
 
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
