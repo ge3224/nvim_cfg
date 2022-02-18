@@ -44,8 +44,5 @@ map('n', '<leader>ws', [[vip:s/\s\{2,}/ /g<CR>]], options)
 -- Yank the full file path of the current buffer
 map('n', '<leader>fp', [[:let @+ = expand("%:p")<CR>]], options)
 
-<<<<<<< Updated upstream
-=======
 -- Extend css utility classes
 map('n', '<leader>bs', [[:s/^\s\{0,}/\t@extend ./:s/\(\w\)\s\(\w\)/\1, .\2/g:s/\(\w\)\s\{0,}$/\1;]], options)
->>>>>>> Stashed changes
