@@ -43,3 +43,4 @@ map('n', '<leader>ws', [[vip:s/\s\{2,}/ /g<CR>]], options)
 
 -- Yank the full file path of the current buffer
 map('n', '<leader>fp', [[:let @+ = expand("%:p")<CR>]], options)
+
