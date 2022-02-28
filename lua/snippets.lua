@@ -23,18 +23,33 @@ vim.keymap.set({ "i", "s"}, "<c-l>", function()
   end
 end, { silent = true })
 
+-- source snippets.lua
+local srcmd = "nvim/lua/snippets.lua<CR>"
+local os = vim.loop.os_uname().sysname
+
+if os == "Linux" then
+  srcmd = "<cmd>luafile ~/.config/" .. srcmd
+elseif os == "Windows_NT" then
+  srcmd = "<cmd>luafile $LOCALAPPDATA/" .. srcmd
+end
+
+vim.keymap.set("n", "<leader>ss", srcmd)
+
 ls.snippets = {
   all = {
   },
+  typescript = {
+    ls.parser.parse_snippet('f', 'for (let i = 0; i < $1.length; i++) {\n\t$0\n}'),
+  },
   scss = {
     -- basic selector
-    ls.parser.parse_snippet('s', '.$1 {\n\t$0\n}'),
+    ls.parser.parse_snippet('.', '.$1 {\n\t$0\n}'),
 
     -- media queries
-    ls.parser.parse_snippet('m', '\t@media screen and (min-width: $1) {\n\t\t$0\n\t}'),
+    ls.parser.parse_snippet('m', '@media screen and (min-width: $1) {\n\t$0\n}'),
 
     -- setting up a default grid for a component
-    ls.parser.parse_snippet('g', '.$1 {\n\tdisplay: block;\n\n\t@media screen and (min-width: $2) {\n\t\tbackground: pink;\n\t}\n\n\t @media screen and (min-width: $3) {\n\t\tbackground: orange;\n\t}\n\n\t@media screen and (min-width: $4) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: $5) {\n\tbackground: lightblue;\n\t}\n\n}\n\n.$6__1 { grid-area: aa; }\n.$7__2 { grid-area: ab; }\n.$8__3 { grid-area: ba; }\n.$9__4 { grid-area: bb; }\n.$10__5 { grid-area: ca; }\n.$0__6 { grid-area: cb; }\n\n'),
+    ls.parser.parse_snippet('mf', '.$0 {\n\tdisplay: block;\n\n\t@media screen and (min-width: vars.\\$sm) {\n\t\tbackground: pink;\n\t}\n\n\t@media screen and (min-width: vars.\\$md) {\n\t\tbackground: lightblue;\n\t}\n\n\t@media screen and (min-width: vars.\\$lg) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: vars.\\$xl) {\n\t\tbackground: orange;\n\t}\n}'),
   },
   html = {
     -- anchor tags with class
@@ -42,6 +57,9 @@ ls.snippets = {
 
     -- div tags with class
     ls.parser.parse_snippet('d', '<div class="$1">\n\t$0\n</div>'),
+
+    -- div start only
+    ls.parser.parse_snippet('ds', '<div class="$0">'),
 
     -- html boilerplate
     ls.parser.parse_snippet('html', '<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta charset="utf-8">\n\t\t<title>$1</title>\n\t</head>\n\t<body>\n\t</body>\n</html>'),
@@ -59,3 +77,8 @@ ls.snippets = {
     ls.parser.parse_snippet('mc', '--[[\n$0\n]]--'),
   },
 }
+
+--[[
+.$0 {\n\tdisplay: block;\n\n\t@media screen and (min-width: vars.$sm) {\n\t\tbackground: pink;\n\t}\n\n\t@media screen and (min-width: vars.$md) {\n\t\tbackground: lightblue;\n\t}\n\n\t@media screen and (min-width: vars.$lg) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: vars.$xl) {\n\t\tbackground: orange;\n\t}\n}
+
+]]--
