@@ -46,3 +46,9 @@ map('n', '<leader>fp', [[:let @+ = expand("%:p")<CR>]], options)
 
 -- Extend css utility classes
 map('n', '<leader>bs', [[:s/^\s\{0,}/\t@extend ./:s/\(\w\)\s\(\w\)/\1, .\2/g:s/\(\w\)\s\{0,}$/\1;]], options)
+
+-- Open calendar in split view
+vim.keymap.set("n", "<leader>cv", "<cmd>Calendar -view=year -split=vertical -width=27<CR>", options)
+
+-- Open quickfix list
+vim.keymap.set("n", "<leader>qf", "<cmd>copen<CR><c-w>J", options);
