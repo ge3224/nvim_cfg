@@ -1,8 +1,8 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   use 'nvim-lua/plenary.nvim'
 
@@ -51,6 +51,8 @@ return require('packer').startup(function()
   use 'rhysd/vim-grammarous'
   use 'KabbAmine/lazyList.vim'
 
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  use {'ojroques/nvim-hardline'}
+  -- use 'vim-airline/vim-airline'
+  -- use 'vim-airline/vim-airline-themes'
+  -- -- use {'vim-airline/vim-airline', config=require'vim-airline-config'}
 end)

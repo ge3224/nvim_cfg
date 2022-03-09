@@ -73,6 +73,15 @@ ls.snippets = {
     -- misc
     ls.parser.parse_snippet('md', '{{ call . "$0" }}'),
   },
+  svelte = {
+    -- duplicate of html
+    -- div tags with class
+    ls.parser.parse_snippet('d', '<div class="$1">\n\t$0\n</div>'),
+
+    -- div start only
+    ls.parser.parse_snippet('ds', '<div class="$0">'),
+
+  },
   lua = {
     ls.parser.parse_snippet('mc', '--[[\n$0\n]]--'),
   },
