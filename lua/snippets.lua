@@ -35,59 +35,82 @@ end
 
 vim.keymap.set("n", "<leader>ss", srcmd)
 
+local es = {
+  loop = { 'f', 'for (let i = 0; i < $1.length; i++) {\n\t$0\n}'},
+}
+
+local html = {
+    -- html boilerplate
+    doc_type = {'html', '<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta charset="utf-8">\n\t\t<title>$1</title>\n\t</head>\n\t<body>\n\t</body>\n</html>'},
+
+    -- a tag
+    anchor = {'a', '<a class="$1" href="$2">$0</a>'},
+
+    -- div tags with class
+    div = {'d', '<div class="$1">\n\t$0\n</div>'},
+
+    -- div start only
+    div_start = {'ds', '<div class="$0">'},
+
+    -- img tag with class
+    img = {'img', '<img src="$1" class="$0">'},
+
+    -- srcset block
+    srcset = {'srcset', '<picture class="$1">\n\t<source media="(min-width:1200px)" srcset="$2">\n\t<source media="(min-width:992px)" srcset="$3">\n\t<source media="(min-width:768px)" srcset="$4">\n\t<source media="(min-width:576px)" srcset="$5">\n\t<img src="$6" alt="$0">\n</picture>'},
+
+    -- https://github.com/yuin/goldmark
+    goldmark = {'md', '{{ call . "$0" }}'},
+}
+
+local css = {
+    -- basic selector
+    class_selector = {'.', '.$1 {\n\t$0\n}'},
+
+    -- media queries
+    media_query = {'m', '@media screen and (min-width: $1) {\n\t$0\n}'},
+
+    -- setting up a default grid for a component
+    grid = {'mf', '.$0 {\n\tdisplay: block;\n\n\t@media screen and (min-width: vars.\\$sm) {\n\t\tbackground: pink;\n\t}\n\n\t@media screen and (min-width: vars.\\$md) {\n\t\tbackground: lightblue;\n\t}\n\n\t@media screen and (min-width: vars.\\$lg) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: vars.\\$xl) {\n\t\tbackground: orange;\n\t}\n}'},
+}
+
+
 ls.snippets = {
   all = {
   },
   typescript = {
-    ls.parser.parse_snippet('f', 'for (let i = 0; i < $1.length; i++) {\n\t$0\n}'),
+    ls.parser.parse_snippet(es.loop[1], es.loop[2]),
+  },
+  javascript = {
+    ls.parser.parse_snippet(es.loop[1], es.loop[2]),
   },
   scss = {
-    -- basic selector
-    ls.parser.parse_snippet('.', '.$1 {\n\t$0\n}'),
-
-    -- media queries
-    ls.parser.parse_snippet('m', '@media screen and (min-width: $1) {\n\t$0\n}'),
-
-    -- setting up a default grid for a component
-    ls.parser.parse_snippet('mf', '.$0 {\n\tdisplay: block;\n\n\t@media screen and (min-width: vars.\\$sm) {\n\t\tbackground: pink;\n\t}\n\n\t@media screen and (min-width: vars.\\$md) {\n\t\tbackground: lightblue;\n\t}\n\n\t@media screen and (min-width: vars.\\$lg) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: vars.\\$xl) {\n\t\tbackground: orange;\n\t}\n}'),
+    ls.parser.parse_snippet(css.class_selector[1], css.class_selector[2]),
+    ls.parser.parse_snippet(css.media_query[1], css.class_selector[2]),
+    ls.parser.parse_snippet(css.grid[1], css.grid[2]),
+  },
+  css = {
+    ls.parser.parse_snippet(css.class_selector[1], css.class_selector[2]),
+    ls.parser.parse_snippet(css.media_query[1], css.class_selector[2]),
+    ls.parser.parse_snippet(css.grid[1], css.grid[2]),
   },
   html = {
-    -- anchor tags with class
-    ls.parser.parse_snippet('a', '<a class="$1" href="$2">$0</a>'),
-
-    -- div tags with class
-    ls.parser.parse_snippet('d', '<div class="$1">\n\t$0\n</div>'),
-
-    -- div start only
-    ls.parser.parse_snippet('ds', '<div class="$0">'),
-
-    -- html boilerplate
-    ls.parser.parse_snippet('html', '<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta charset="utf-8">\n\t\t<title>$1</title>\n\t</head>\n\t<body>\n\t</body>\n</html>'),
-
-    -- img tag with class
-    ls.parser.parse_snippet('img', '<img src="$1" class="$0">'),
-
-    -- srcset block
-    ls.parser.parse_snippet('srcset', '<picture class="$1">\n\t<source media="(min-width:1200px)" srcset="$2">\n\t<source media="(min-width:992px)" srcset="$3">\n\t<source media="(min-width:768px)" srcset="$4">\n\t<source media="(min-width:576px)" srcset="$5">\n\t<img src="$6" alt="$0">\n</picture>'),
-    --
-    -- misc
-    ls.parser.parse_snippet('md', '{{ call . "$0" }}'),
+    ls.parser.parse_snippet(html.div[1], html.div[2]),
+    ls.parser.parse_snippet(html.div_start[1], html.div_start[2]),
+    ls.parser.parse_snippet(html.doc_type[1], html.doc_type[2]),
+    ls.parser.parse_snippet(html.img[1], html.img[2]),
+    ls.parser.parse_snippet(html.srcset[1], html.srcset[2]),
+    ls.parser.parse_snippet(html.goldmark[1], html.goldmark[2]),
   },
   svelte = {
-    -- duplicate of html
-    -- div tags with class
-    ls.parser.parse_snippet('d', '<div class="$1">\n\t$0\n</div>'),
-
-    -- div start only
-    ls.parser.parse_snippet('ds', '<div class="$0">'),
-
+    ls.parser.parse_snippet(es.loop[1], es.loop[2]),
+    ls.parser.parse_snippet(html.div[1], html.div[2]),
+    ls.parser.parse_snippet(html.div_start[1], html.div_start[2]),
+    ls.parser.parse_snippet(html.doc_type[1], html.doc_type[2]),
+    ls.parser.parse_snippet(html.img[1], html.img[2]),
+    ls.parser.parse_snippet(html.srcset[1], html.srcset[2]),
+    ls.parser.parse_snippet(html.goldmark[1], html.goldmark[2]),
   },
   lua = {
     ls.parser.parse_snippet('mc', '--[[\n$0\n]]--'),
   },
 }
-
---[[
-.$0 {\n\tdisplay: block;\n\n\t@media screen and (min-width: vars.$sm) {\n\t\tbackground: pink;\n\t}\n\n\t@media screen and (min-width: vars.$md) {\n\t\tbackground: lightblue;\n\t}\n\n\t@media screen and (min-width: vars.$lg) {\n\t\tbackground: lightgreen;\n\t}\n\n\t@media screen and (min-width: vars.$xl) {\n\t\tbackground: orange;\n\t}\n}
-
-]]--
