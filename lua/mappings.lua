@@ -36,6 +36,9 @@ vim.keymap.set('n', 'gh', [[<C-w>h]], options)
 vim.keymap.set('n', 'gk', [[<C-w>k]], options)
 vim.keymap.set('n', 'gl', [[<C-w>l]], options)
 
+-- Remove all ^M carriage returns from a buffer
+vim.keymap.set('n', 'fu', [[:e ++fileformat=dos<CR> :set fileformat=unix<CR>]], options);
+
 -- Remove duplicates
 vim.keymap.set('n', '<leader>rd', [[mz:g/^\(.*\)\n\1$/d<CR>'z]], options)
 
@@ -53,6 +56,10 @@ vim.keymap.set("n", "<leader>cv", "<cmd>Calendar -view=year -split=vertical -wid
 
 -- Open quickfix list
 vim.keymap.set("n", "<leader>qf", "<cmd>copen<CR><c-w>J", options);
+
+-- fugitive
+vim.keymap.set("n", "<leader>gl", "<cmd>diffget //2<CR>", options);
+vim.keymap.set("n", "<leader>gr", "<cmd>diffget //3<CR>", options);
 
 
 -- source mappings.lua
