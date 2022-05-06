@@ -37,7 +37,7 @@ vim.keymap.set('n', 'gk', [[<C-w>k]], options)
 vim.keymap.set('n', 'gl', [[<C-w>l]], options)
 
 -- Remove all ^M carriage returns from a buffer
-vim.keymap.set('n', 'fu', [[:e ++fileformat=dos<CR> :set fileformat=unix<CR>]], options);
+vim.keymap.set('n', '<leader>fu', [[:e ++fileformat=dos<CR> :set fileformat=unix<CR>]], options);
 
 -- Remove duplicates
 vim.keymap.set('n', '<leader>rd', [[mz:g/^\(.*\)\n\1$/d<CR>'z]], options)
