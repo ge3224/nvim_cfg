@@ -9,3 +9,4 @@ require('gitsigns').setup{}
 require('hardline').setup{}
 require('snippets')
 require('treesit')
+require('autocmd')
