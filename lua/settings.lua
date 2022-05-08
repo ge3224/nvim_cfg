@@ -21,7 +21,6 @@ o.updatetime = 50
 
 -- window-local options
 
---wo.colorcolumn = "80"
 wo.number = true
 wo.relativenumber = true
 wo.signcolumn = "yes"
@@ -33,12 +32,19 @@ bo.fileformat = "unix"
 bo.spellfile = "spell/en.utf-8.add"
 bo.spelllang = "en,cjk"
 bo.swapfile = false
--- bo.formatoptions="cro"
 
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
+
+-- global statusline
+vim.opt.laststatus = 3
+vim.api.nvim_exec([[
+  highlight WinSeparator guibg=NONE
+]], false)
+
+--cmd("highlight WinSeparator guibg=NONE");
 
 vim.g['airline#extensions#tabline#formatter'] = 'default'
 vim.g.airline_section_z = '%p%%%{g:airline_symbols.linenr}%#__accent_bold#%l/%L'
