@@ -56,6 +56,9 @@ vim.keymap.set("n", "<leader>cv", "<cmd>Calendar -view=year -split=vertical -wid
 
 -- Open quickfix list
 vim.keymap.set("n", "<leader>qf", "<cmd>copen<CR><c-w>J", options);
+vim.keymap.set("n", "<leader>qfc", "<cmd>cclose<CR>", options);
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", options)
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", options)
 
 -- fugitive
 vim.keymap.set("n", "<leader>gl", "<cmd>diffget //2<CR>", options);
