@@ -69,6 +69,14 @@ ls.add_snippets("scss", {
 
 ls.filetype_extend("css", { "scss" })
 
+ls.add_snippets("go", {
+  s("ie", fmt([[
+  if err != nil {{
+    {}
+  }}
+  ]], { i(0) })),
+})
+
 ls.add_snippets("javascript", {
   s("f", fmt([[
     for (let i = 0; i < {}.length; i++) {{

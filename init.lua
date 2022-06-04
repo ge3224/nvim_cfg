@@ -10,3 +10,4 @@ require('hardline').setup{}
 require('snippets')
 require('treesit')
 require('autocmd')
+require('debugging')

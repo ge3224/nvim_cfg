@@ -13,8 +13,6 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-path'
   use 'onsails/lspkind-nvim'
-  -- use 'hrsh7th/vim-vsnip'
-  -- use 'hrsh7th/vim-vsnip-integ'
   use 'L3MON4D3/LuaSnip'
 
   use {
@@ -26,8 +24,9 @@ return require('packer').startup(function()
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use 'sharkdp/fd'
 
   use 'nvim-telescope/telescope-fzy-native.nvim'
 
@@ -51,8 +50,12 @@ return require('packer').startup(function()
   use 'rhysd/vim-grammarous'
   use 'KabbAmine/lazyList.vim'
 
-  use {'ojroques/nvim-hardline'}
-  -- use 'vim-airline/vim-airline'
-  -- use 'vim-airline/vim-airline-themes'
-  -- -- use {'vim-airline/vim-airline', config=require'vim-airline-config'}
+  use { 'ojroques/nvim-hardline' }
+
+  use 'jbyuki/one-small-step-for-vimkind' 
+  use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
 end)

@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<CR>', options)
 vim.keymap.set('t', '<esc>', ':<C-\\><C-n>', options)
 
 -- Source init.lua
-vim.keymap.set('n', '<leader>sv', ':luafile $MYVIMRC<CR>', options)
+vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<CR>', options)
 
 -- Telescope mappings
 vim.keymap.set("n", "<leader>ff", [[<Cmd>Telescope find_files<CR>]], options)
