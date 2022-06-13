@@ -40,6 +40,7 @@ vim.opt.expandtab = true
 
 -- global statusline
 vim.opt.laststatus = 3
+vim.opt.winbar = "%f"
 vim.api.nvim_exec([[
   highlight WinSeparator guibg=NONE
 ]], false)

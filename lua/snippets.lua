@@ -1,4 +1,4 @@
-local ls = require"luasnip"
+local ls = require "luasnip"
 local s = ls.snippet
 -- local sn = ls.snippet_node
 -- local isn = ls.indent_snippet_node
@@ -22,19 +22,19 @@ ls.config.set_config {
   updateevents = "TextChanged,TextChangedI",
 }
 
-vim.keymap.set({ "i", "s"}, "<c-k>", function()
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s"}, "<c-j>", function()
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s"}, "<c-l>", function()
+vim.keymap.set({ "i", "s" }, "<c-l>", function()
   if ls.choice_active() then
     ls.choice_active(1)
   end
@@ -56,7 +56,7 @@ ls.add_snippets("scss", {
     .{} {{
       {}
     }}
-  ]], { i(1), i(0) } )),
+  ]], { i(1), i(0) })),
   s("m", fmt([[
     @media screen and (min-width: {}) {{
       {}
@@ -64,7 +64,7 @@ ls.add_snippets("scss", {
   ]], { i(1), i(0) })),
   s("x", fmt([[
     @extend .{};
-  ]], { i(0) } )),
+  ]], { i(0) })),
 })
 
 ls.filetype_extend("css", { "scss" })
@@ -82,17 +82,22 @@ ls.add_snippets("javascript", {
     for (let i = 0; i < {}.length; i++) {{
       {}
     }}
-  ]], {i(1), i(0)})),
+  ]], { i(1), i(0) })),
   s("nn", fmt([[
     if ({} !== null && {} !== undefined && {} !== void 0) {{
       {}
     }}
-  ]], {i(1), rep(1), rep(1), i(0)})),
+  ]], { i(1), rep(1), rep(1), i(0) })),
   s("in", fmt([[
     if ({} === null || {} === undefined || {} === void 0) {{
       {}
     }}
-  ]], {i(1), rep(1), rep(1), i(0)}))
+  ]], { i(1), rep(1), rep(1), i(0) })),
+  s("rfc", fmt([[
+    export default function {}() {{
+      return <{}>{}</{}>
+    }}
+  ]], { i(1), i(2), i(0), rep(2) }))
 })
 
 ls.filetype_extend("typescript", { "javascript" });
@@ -114,11 +119,10 @@ ls.add_snippets("html", {
     <{}{}>
       {}
     </{}>
-  ]], {i(1), i(2), i(0), rep(1)})),
+  ]], { i(1), i(2), i(0), rep(1) })),
   s("ie", fmt([[
     <{}{}>{}</{}>
   ]], { i(1), i(2), i(0), rep(1) }))
 })
 
 ls.filetype_extend("svelte", { "scss", "html", "javascript" });
-
