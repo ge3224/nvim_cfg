@@ -51,6 +51,32 @@ elseif os == "Windows_NT" then
 end
 vim.keymap.set("n", "<leader>ss", srcmd)
 
+ls.add_snippets("all", {
+  s("cb", fmt([[
+  {{
+    {}
+  }}
+  ]], {i(0)})),
+  s("bb", fmt([[
+  [
+    {}
+  ]
+  ]],{i(0)})),
+  s("pb", fmt([[
+  (
+    {}
+  )
+  ]],{i(0)})),
+
+  s("wb", fmt([[
+  {{
+    {}
+  }})
+  ]],{i(0)})),
+})
+
+ls.filetype_extend("all", { "html" })
+
 ls.add_snippets("scss", {
   s("c", fmt([[
     .{} {{
