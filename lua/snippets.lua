@@ -56,23 +56,23 @@ ls.add_snippets("all", {
   {{
     {}
   }}
-  ]], {i(0)})),
+  ]], { i(0) })),
   s("bb", fmt([[
   [
     {}
   ]
-  ]],{i(0)})),
+  ]], { i(0) })),
   s("pb", fmt([[
   (
     {}
   )
-  ]],{i(0)})),
+  ]], { i(0) })),
 
   s("wb", fmt([[
   {{
     {}
   }})
-  ]],{i(0)})),
+  ]], { i(0) })),
 })
 
 ls.filetype_extend("all", { "html" })
@@ -127,6 +127,7 @@ ls.add_snippets("javascript", {
 })
 
 ls.filetype_extend("typescript", { "javascript" });
+ls.filetype_extend("typescriptreact", { "javascript" });
 
 ls.add_snippets("html", {
   s("doc", fmt([[
