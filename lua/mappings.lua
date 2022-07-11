@@ -76,3 +76,5 @@ elseif os == "Windows_NT" then
 end
 
 vim.keymap.set("n", "<leader>sm", srcmd)
+
+vim.keymap.set("n", "<leader>st", "<cmd>new<CR><C-w>J<cmd>resize 20<CR><cmd>term<CR>", options);

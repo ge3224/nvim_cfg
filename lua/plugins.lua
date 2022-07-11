@@ -2,7 +2,10 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
 
   use 'nvim-lua/plenary.nvim'
 
@@ -52,7 +55,7 @@ return require('packer').startup(function()
 
   use { 'ojroques/nvim-hardline' }
 
-  use 'jbyuki/one-small-step-for-vimkind' 
+  use 'jbyuki/one-small-step-for-vimkind'
   use 'mfussenegger/nvim-dap'
   use 'leoluz/nvim-dap-go'
   use 'rcarriga/nvim-dap-ui'
