@@ -23,6 +23,7 @@ o.updatetime = 50
 
 wo.number = true
 wo.relativenumber = true
+wo.colorcolumn = "80"
 wo.signcolumn = "yes"
 wo.wrap = false
 
@@ -37,6 +38,8 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
+
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg=0, fg=LightGrey })
 
 -- global statusline
 vim.opt.laststatus = 3

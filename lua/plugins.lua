@@ -1,7 +1,9 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -31,27 +33,21 @@ return require('packer').startup(function()
   }
   use 'sharkdp/fd'
 
+  use 'folke/tokyonight.nvim'
+
   use 'nvim-telescope/telescope-fzy-native.nvim'
-
   use 'terrortylor/nvim-comment'
-
   use 'ThePrimeagen/harpoon'
 
   use 'tpope/vim-vinegar'
-
   use 'tpope/vim-fugitive'
-
   use 'tpope/vim-surround'
-
   use 'tpope/vim-eunuch'
-
-  use 'tjdevries/colorbuddy.vim'
-  use 'tjdevries/gruvbuddy.nvim'
 
   use 'itchyny/calendar.vim'
   use 'freitass/todo.txt-vim'
   use 'rhysd/vim-grammarous'
-  use 'KabbAmine/lazyList.vim'
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
 
   use { 'ojroques/nvim-hardline' }
 

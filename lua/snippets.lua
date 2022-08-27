@@ -71,7 +71,7 @@ ls.add_snippets("all", {
   s("wb", fmt([[
   {{
     {}
-  }});
+  }})
   ]], { i(0) })),
 })
 
@@ -135,6 +135,7 @@ ls.add_snippets("html", {
     <html>
       <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{}</title>
       </head>
       <body>

@@ -1,3 +1,7 @@
 # nvim_cfg
 
-My editor configuration.
+```
+git pull
+make CMAKE_BUILD_TYPE=Release
+sudo make install
+```
