@@ -7,7 +7,7 @@ local options = { noremap = true }
 vim.g.mapleader = ' ' -- 'vim.g' sets global variables
 
 -- Edit init.lua
-vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<CR>', options)
+vim.keymap.set('n', '<leader>ev', ':split $MYVIMRC<CR>', options)
 
 -- Terminal escape
 vim.keymap.set('t', '<esc>', ':<C-\\><C-n>', options)
@@ -53,9 +53,6 @@ vim.keymap.set('n', '<leader>bs', [[:s/^\s\{0,}/\t@extend ./:s/\(\w\)\s\(\w\)/\
 
 -- Open calendar in split view
 vim.keymap.set("n", "<leader>cv", "<cmd>Calendar -view=year -split=vertical -width=27<CR>", options)
-
--- Project view
-vim.keymap.set("n", "<leader>pv", "<cmd>Sex<CR>", options)
 
 -- Open quickfix list
 vim.keymap.set("n", "<leader>qf", "<cmd>copen<CR><c-w>J", options);
