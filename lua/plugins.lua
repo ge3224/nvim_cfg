@@ -47,7 +47,11 @@ return require('packer').startup(function(use)
   use 'itchyny/calendar.vim'
   use 'freitass/todo.txt-vim'
   use 'rhysd/vim-grammarous'
-  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   use { 'ojroques/nvim-hardline' }
 
