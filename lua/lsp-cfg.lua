@@ -42,11 +42,7 @@ lsp_installer.on_server_ready(function(server)
   local opts = {
     on_attach = on_attach
   }
-
-  -- (optional) Customize the options passed to the server
-  -- if server.name == "tsserver" then
-  --     opts.root_dir = function() ... end
-  -- end
+ 
   if server.name == "eslint" then
     local eslint_config = require("lspconfig.server_configurations.eslint")
     opts.cmd = { "yarn", "exec", unpack(eslint_config.default_config.cmd) }

@@ -15,6 +15,8 @@ vim.keymap.set('t', '<esc>', ':<C-\\><C-n>', options)
 -- Source init.lua
 vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<CR>', options)
 
+-- movements
+
 -- Telescope mappings
 vim.keymap.set("n", "<leader>ff", [[<Cmd>Telescope find_files<CR>]], options)
 vim.keymap.set("n", "<leader>fg", [[<Cmd>Telescope live_grep<CR>]], options)
@@ -29,6 +31,9 @@ vim.keymap.set('n', '<leader>o', [[:lua require("harpoon.ui").nav_file(3)<CR>]],
 vim.keymap.set('n', '<leader>p', [[:lua require("harpoon.ui").nav_file(4)<CR>]], options)
 vim.keymap.set('n', '<leader>y', [[:lua require("harpoon.ui").toggle_quick_menu()<CR>]], options)
 
+-- Movements
+vim.keymap.set('n', '<C-d>', '<C-d>zz', options)
+vim.keymap.set('n', '<C-u>', '<C-u>zz', options)
 
 -- Moving through split windows
 vim.keymap.set('n', 'gj', [[<C-w>j]], options)
@@ -52,7 +57,7 @@ vim.keymap.set('n', '<leader>fp', [[:let @+ = expand("%:p")<CR>]], options)
 vim.keymap.set('n', '<leader>bs', [[:s/^\s\{0,}/\t@extend ./:s/\(\w\)\s\(\w\)/\1, .\2/g:s/\(\w\)\s\{0,}$/\1;]], options)
 
 -- Open calendar in split view
-vim.keymap.set("n", "<leader>cv", "<cmd>Calendar -view=year -split=vertical -width=27<CR>", options)
+vim.keymap.set("n", "<leader>cv", [[<cmd>Calendar -view=year -split=vertical -width=27<CR>]], options)
 
 -- Open quickfix list
 vim.keymap.set("n", "<leader>qf", "<cmd>copen<CR><c-w>J", options);
@@ -63,7 +68,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", options)
 -- fugitive
 vim.keymap.set("n", "<leader>gl", "<cmd>diffget //2<CR>", options);
 vim.keymap.set("n", "<leader>gr", "<cmd>diffget //3<CR>", options);
-
 
 -- source mappings.lua
 local srcmd = "nvim/lua/mappings.lua<CR>"
