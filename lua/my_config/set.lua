@@ -29,10 +29,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.opt.laststatus = 3
-vim.opt.winbar = "%f"
-vim.api.nvim_exec([[
-  highlight WinSeparator guibg=NONE
-]], false)
-
+-- vim.opt.laststatus = 3
+-- vim.opt.winbar = "%f"
+-- vim.api.nvim_exec([[
+--   highlight WinSeparator guibg=NONE
+-- ]], false)
