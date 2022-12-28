@@ -9,6 +9,8 @@ lsp.ensure_installed({
 	'sumneko_lua',
 	'rust_analyzer',
 	'gopls',
+    'phpactor',
+    'tailwindcss',
 })
 
 local cmp = require('cmp')
