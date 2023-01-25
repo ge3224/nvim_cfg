@@ -129,6 +129,19 @@ ls.add_snippets("javascript", {
 ls.filetype_extend("typescript", { "javascript" });
 ls.filetype_extend("typescriptreact", { "javascript" });
 
+ls.add_snippets("php", {
+  s("pb", fmt([[
+  <?php
+  {}
+  ?>
+    ]], { i(0) })
+  ),
+  s("pi", fmt([[
+  <?php {}; ?>
+  ]], { i(0) })
+  )
+})
+
 ls.add_snippets("html", {
   s("doc", fmt([[
     <!DOCTYPE html>
