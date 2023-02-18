@@ -55,11 +55,11 @@ return require('packer').startup(function(use)
 
   use 'terrortylor/nvim-comment'
   use 'jbyuki/one-small-step-for-vimkind'
-  use 'mfussenegger/nvim-dap'
-  use 'leoluz/nvim-dap-go'
-  use 'rcarriga/nvim-dap-ui'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'nvim-telescope/telescope-dap.nvim'
+  -- use 'mfussenegger/nvim-dap'
+  -- use 'leoluz/nvim-dap-go'
+  -- use 'rcarriga/nvim-dap-ui'
+  -- use 'theHamsta/nvim-dap-virtual-text'
+  -- use 'nvim-telescope/telescope-dap.nvim'
 
   use 'freitass/todo.txt-vim'
 

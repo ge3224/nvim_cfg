@@ -52,15 +52,15 @@ end
 vim.keymap.set("n", "<leader>ss", srcmd)
 
 ls.add_snippets("all", {
-  s("cb", fmt([[
+  s("bl", fmt([[
   {{
     {}
   }}
   ]], { i(0) })),
-  s("bb", fmt([[
+  s("sb", fmt([[
   [
     {}
-  ]
+  ];
   ]], { i(0) })),
   s("pb", fmt([[
   (
@@ -68,10 +68,10 @@ ls.add_snippets("all", {
   )
   ]], { i(0) })),
 
-  s("wb", fmt([[
+  s("wrap", fmt([[
   {{
     {}
-  }})
+  }});
   ]], { i(0) })),
 })
 
