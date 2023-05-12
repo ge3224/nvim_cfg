@@ -1,7 +1,9 @@
-# nvim_cfg
+# My Neovim Configuration
 
-```
-git pull
-make CMAKE_BUILD_TYPE=Release
-sudo make install
-```
+## References
+
+- [Neovim Repo](https://github.com/neovim/neovim)
+- [LSP Config](https://github.com/neovim/nvim-lspconfig)
+- [Kickstart](https://github.com/nvim-lua/kickstart.nvim)
+- [Structure Neovim Config](https://github.com/folke/lazy.nvim#-structuring-your-plugins)
+- [Lua](https://learnxinyminutes.com/docs/lua/)
