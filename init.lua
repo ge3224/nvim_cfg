@@ -211,6 +211,9 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- edit init.lua
 vim.keymap.set('n', '<leader>ev', '<cmd>tabedit $MYVIMRC<CR>', { silent = true })
 
+-- run prettier on current file
+vim.keymap.set('n', '<leader>P', '<cmd>!pnpm exec prettier --write %<CR>', { silent = true })
+
 -- move line selections up or down
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
