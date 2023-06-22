@@ -2,34 +2,39 @@ return {
   'theprimeagen/harpoon',
   keys = {
     {
-      "<leader>y",
+      "<leader>H",
       function() require("harpoon.ui").toggle_quick_menu() end,
       desc = "view harpooned files"
     },
     {
-      "<leader>H",
+      "<leader>hm",
       function() require("harpoon.mark").add_file() end,
       desc = "add file to harpoon list"
     },
     {
-      "<leader>u",
+      "<leader>h1",
       function() require("harpoon.ui").nav_file(1) end,
       desc = "go to first file"
     },
     {
-      "<leader>i",
+      "<leader>h2",
       function() require("harpoon.ui").nav_file(2) end,
       desc = "go to second file"
     },
     {
-      "<leader>o",
+      "<leader>h3",
       function() require("harpoon.ui").nav_file(3) end,
       desc = "go to third file"
     },
     {
-      "<leader>p",
+      "<leader>h4",
       function() require("harpoon.ui").nav_file(4) end,
       desc = "go to fourth file"
+    },
+    {
+      "<leader>h5",
+      function() require("harpoon.ui").nav_file(5) end,
+      desc = "go to fifth file"
     },
   },
 }
