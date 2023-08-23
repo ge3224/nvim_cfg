@@ -245,6 +245,10 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true })
 vim.keymap.set('n', 'n', 'nzzzv', { silent = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { silent = true })
 
+-- quickfix list
+vim.keymap.set('n', 'gn', '<cmd>cn<CR>', { silent = true })
+vim.keymap.set('n', 'gp', '<cmd>cN<CR>', { silent = true })
+
 -- open a small terminal
 vim.keymap.set('n', '<leader>st', '<cmd>new<CR><C-w>J<cmd>resize 16<CR><cmd>term<CR>', { silent = true })
 
