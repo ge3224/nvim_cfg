@@ -37,4 +37,7 @@ return {
       desc = "go to fifth file"
     },
   },
+  config = function()
+    require("harpoon").setup()
+  end,
 }

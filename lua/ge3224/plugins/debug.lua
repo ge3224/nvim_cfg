@@ -69,7 +69,7 @@ return {
           step_back = 'b',
           run_last = '▶▶',
           terminate = '⏹',
-          disconnect = "⏏",
+          disconnect = '⏏',
         },
       },
     }
