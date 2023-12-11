@@ -319,6 +319,9 @@ vim.keymap.set('n', '<leader>st', '<cmd>new<CR><C-w>J<cmd>resize 16<CR><cmd>term
 -- fugitive mappings
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
+-- delete cached, i.e. swap file
+vim.keymap.set('n', '<leader>zc', '<cmd>call system("rm -rdf ~/.local/state/nvim/swap")<CR>', { silent = true })
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
